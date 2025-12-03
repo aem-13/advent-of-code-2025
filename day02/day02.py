@@ -26,7 +26,7 @@ def part1(input: Input) -> int:
 
 def part2(input: Input) -> int:
     """The (s + s)[1:-1] trick is apparently well-known in formal language theory and string algorithms.
-    A one-line test for string periodicity. I didn't know it"""
+    A one-line test for string periodicity. I didn't know it
     invalid = 0
     for begin, end in input:
         for n in range(begin, end + 1):
@@ -34,23 +34,22 @@ def part2(input: Input) -> int:
             if s in (s + s)[1:-1]:
                 invalid += n
     return invalid
+
+    original, naive solution below
     """
-    original, naive solution
-    invalid = []
+
+    invalid = 0
     for begin, end in input:
         for n in range(begin, end + 1):
             s = str(n)
             length_n = len(s)
             subs = {s[x:y] for x, y in combinations(range(length_n + 1), r=2)}
-            sub_counts = {
-                sub: s.count(sub) for sub in subs if s.count(sub) != 1
-            }
+            sub_counts = {sub: s.count(sub) for sub in subs if s.count(sub) != 1}
             for k, v in sub_counts.items():
                 if k * v == s:
-                    invalid.append(n)
+                    invalid += n
                     break
-    return sum(invalid)
-    """
+    return invalid
 
 
 def from_string(s: str) -> Input:

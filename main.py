@@ -1,20 +1,20 @@
+import sys
 from day01 import day01
 from day02 import day02
+from day03 import day03
+
+DISPATCH = {"day01": day01, "day02": day02, "day03": day03}
 
 
-def main():
-    day01_path = "day01/input.txt"
-    day01_input = day01.parse(day01_path)
+def run():
+    day = sys.argv[1]
+    dispatch = DISPATCH[day]
+    path = f"{day}/input.txt"
+    input = dispatch.parse(path)
 
-    print(f"Day01, Part One: {day01.part1(day01_input)}")
-    print(f"Day01, Part Two: {day01.part2(day01_input)}")
-
-    day02_path = "day02/input.txt"
-    day02_input = day02.parse(day02_path)
-
-    print(f"Day02, Part One: {day02.part1(day02_input)}")
-    print(f"Day02, Part Two: {day02.part2(day02_input)}")
+    print(f"{day}, Part One: {dispatch.part1(input)}")
+    print(f"{day}, Part Two: {dispatch.part2(input)}")
 
 
 if __name__ == "__main__":
-    main()
+    run()
