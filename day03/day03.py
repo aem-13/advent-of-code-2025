@@ -1,7 +1,7 @@
 type Input = str
 
 
-def parse(filename: str):
+def parse(filename: str) -> Input:
     with open(filename, "r") as fp:
         lines = fp.read()
 
