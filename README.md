@@ -3,5 +3,5 @@
 run with 
 
 ```bash
-python3 main.py day0N
+python3 main.py day0N {1,2}
 ```
