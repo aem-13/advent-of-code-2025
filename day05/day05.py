@@ -1,4 +1,4 @@
-type Input = tuple[set, set]
+type Input = tuple[list, set]
 
 
 def parse(filepath: str) -> Input:

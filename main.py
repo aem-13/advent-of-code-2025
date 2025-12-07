@@ -4,6 +4,7 @@ from day02 import day02
 from day03 import day03
 from day04 import day04
 from day05 import day05
+from day06 import day06
 
 DISPATCH = {
     "day01": day01,
@@ -11,6 +12,7 @@ DISPATCH = {
     "day03": day03,
     "day04": day04,
     "day05": day05,
+    "day06": day06,
 }
 
 
